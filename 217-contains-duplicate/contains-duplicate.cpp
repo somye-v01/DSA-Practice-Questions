@@ -4,12 +4,11 @@ public:
         unordered_map<int,int> m;
         for (auto x : nums){
             m[x]++;
-        }
-        for(auto& x : m){
-            if (x.second > 1){
+            if (m[x] > 1){
                 return true;
             }
         }
+        
         return false;
     }
     
