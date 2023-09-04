@@ -4,7 +4,7 @@ public:
         unordered_map<int,int> m;
         vector<int> ans;
         for (auto x : nums1){
-            m[x] = 10;
+            m[x] = 1;
         }
         for (auto x : nums2){
             if(m.find(x) != m.end()){
@@ -12,7 +12,7 @@ public:
             }
         }
         for (auto& x : m){
-            if(x.second > 10){
+            if(x.second > 1){
                 ans.push_back(x.first);
             }
         }
