@@ -7,7 +7,9 @@ public:
             m[x] = 10;
         }
         for (auto x : nums2){
+            if(m.find(x) != m.end()){
             m[x]++;
+            }
         }
         for (auto& x : m){
             if(x.second > 10){
