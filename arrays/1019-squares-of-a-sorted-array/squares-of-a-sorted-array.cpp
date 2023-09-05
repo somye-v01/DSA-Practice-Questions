@@ -25,20 +25,15 @@ public:
         map<int, int> m;
         vector<int> ans;
 
-        // Square each element and count occurrences
         for (int num : nums) {
             int squared = num * num;
             m[squared]++;
         }
 
-        // Iterate through the map and add squared values to ans
+        
         for (auto& x : m) {
-            int squaredValue = x.first;
-            int count = x.second;
-
-            // Add the squared value to ans count times
-            for (int i = 0; i < count; i++) {
-                ans.push_back(squaredValue);
+            for (int i = 0; i < x.second; i++) {
+                ans.push_back(x.first);
             }
         }
 
