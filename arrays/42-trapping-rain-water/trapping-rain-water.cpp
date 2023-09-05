@@ -16,14 +16,6 @@ public:
             count_right = max(count_right, height[i]);
             right_max[i] = count_right;
         }
-        // for(auto x : left_max){
-        //     cout<<x<<" ";
-        // }
-        // cout<<endl;
-        // for(auto x : right_max){
-        //     cout<<x<<" ";
-        // }
-
         for(int i = 0; i < n; i++){
             int sol = min(right_max[i], left_max[i] ) - height[i];
             ans[i] = sol;
