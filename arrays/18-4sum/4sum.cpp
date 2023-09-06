@@ -4,7 +4,7 @@ public:
         sort(nums.begin(),nums.end());
         int n = nums.size();
         set<vector<int>> s;
-        // vector<int> v(4);
+    
         vector<vector<int>> ans;
         for(int i = 0; i < n; i++){
             
@@ -21,6 +21,7 @@ public:
                     }
                     else if (nums[k] + nums[l] == targetnew){
                         s.insert(vector<int>{nums[i],nums[j],nums[k],nums[l]});
+                        // ans.push_back({nums[i],nums[j],nums[k],nums[l]});
                         k++;
                         --l;
                     }
