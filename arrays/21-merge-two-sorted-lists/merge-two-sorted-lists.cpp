@@ -41,6 +41,6 @@ public:
             }
             
         }
-        return dummyptr->next;
+        return dummyptr->next; //not include -1.
     }
 };
