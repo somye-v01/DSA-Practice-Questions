@@ -11,24 +11,25 @@
 class Solution {
 public:
 
-    ListNode* reverseListHelper(ListNode* curr, ListNode* prev){
-        if (curr == NULL){
-            return prev;
+    ListNode* reverseListHelper(ListNode* prev, ListNode* curr){
+        while(curr!=nullptr){
+            ListNode* temp = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = temp;
         }
-        ListNode* forward = curr->next;
-        curr->next = prev;
-        return reverseListHelper(forward,curr);
-        
-        
+        return prev;
     }
 
     ListNode* reverseList(ListNode* head) {
-        if(head == NULL){
+        if (head == NULL){
             return NULL;
         }
-        ListNode* prev = nullptr;
+        if (head->next == NULL){
+            return head;
+        }
         ListNode* curr = head;
-    return reverseListHelper(curr,prev);
-    
+        ListNode* prev = nullptr;
+        return reverseListHelper(prev,curr);
     }
 };
