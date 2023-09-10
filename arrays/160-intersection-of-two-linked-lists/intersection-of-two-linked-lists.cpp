@@ -9,13 +9,13 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        map<ListNode*,int> m;
+        set<ListNode*> s;
         while (headA != nullptr){
-            m[headA] = 1;
+            s.insert(headA);
             headA = headA->next;
         }
         while(headB!=nullptr){
-            if(m.find(headB) == m.end()){
+            if(s.find(headB) == s.end()){
                 headB=headB->next;
             }
             else{
