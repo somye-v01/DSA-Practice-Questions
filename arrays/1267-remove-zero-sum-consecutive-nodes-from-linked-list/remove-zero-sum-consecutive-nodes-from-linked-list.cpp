@@ -34,7 +34,7 @@ public:
                     for(int st = i; st<=j; st++){
                         ll[st]=0;
                     }
-                   
+                   break;
                 }
             }
         }
