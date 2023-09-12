@@ -13,7 +13,6 @@ public:
             cout<<x<<" ";
         }
         int count = 0;
-        int ans = INT_MAX;
         sort(freq.begin(),freq.end());
         set<int> se;
         for(int i = 0; i<freq.size(); i++){
