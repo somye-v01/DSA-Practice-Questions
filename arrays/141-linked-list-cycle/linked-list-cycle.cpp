@@ -33,8 +33,9 @@ public:
         if (fast == nullptr || fast->next == nullptr ){
             return false;
         }
-        slow = slow->next;
+        
         fast = fast->next->next;
+        slow = slow->next;
         
     }
     return true;
