@@ -11,18 +11,32 @@ class Solution {
 public:
 
     bool hasCycle(ListNode *head) {
-       
-        set<ListNode*> s;
-        ListNode* temp = head;
-       while (temp != nullptr) {
-        if (s.find(temp) != s.end()) {
-            //cycle
-            return true;
+        if(head == nullptr || head->next==nullptr){
+            return false;
         }
-        s.insert(temp);
-        temp = temp->next;
-    }
+       
+    //     set<ListNode*> s;
+    //     ListNode* temp = head;
+    //    while (temp != nullptr) {
+    //     if (s.find(temp) != s.end()) {
+    //         //cycle
+    //         return true;
+    //     }
+    //     s.insert(temp);
+    //     temp = temp->next;
+    // }
 
-    return false;
+    // return false;
+    ListNode* slow = head;
+    ListNode* fast = head->next;
+    while(slow!=fast){
+        if (fast == nullptr || fast->next == nullptr ){
+            return false;
+        }
+        slow = slow->next;
+        fast = fast->next->next;
+        
+    }
+    return true;
 }
 };
