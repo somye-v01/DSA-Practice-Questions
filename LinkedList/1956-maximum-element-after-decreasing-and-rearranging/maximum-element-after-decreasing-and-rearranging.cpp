@@ -1,23 +1,23 @@
 class Solution {
 public:
-    int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
-        sort(arr.begin(), arr.end());
-        int n = arr.size();
-        int ans = 0;
-       
-        arr[0] = 1;
-        if(arr.size() == 1){
-            return 1;
-        }
-        if(arr.size()==10002){
-            return 210;
-        }
-    
-        for(int i = 1; i < arr.size(); i++){
-            if(arr[i] - arr[i-1] > 1){
-                arr[i] = ++arr[i-1];
-            }
-        }
-        return arr[n-1];
+   int maximumElementAfterDecrementingAndRearranging(vector<int>& arr) {
+    int n = arr.size();
+    vector<int> count(n + 1, 0);
+
+    for (int x : arr) {
+        count[min(x, n)]++;
     }
+
+    int maxEl = 0; 
+    int i = 1;
+
+    while (i <= n) {
+        int freq = count[i];
+
+        maxEl = min(maxEl + freq, i);
+        i++;
+    }
+
+    return maxEl;
+}
 };
