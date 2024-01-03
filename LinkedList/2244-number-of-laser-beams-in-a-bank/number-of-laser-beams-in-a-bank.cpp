@@ -14,9 +14,6 @@ public:
             }
         }
         int ans = 0;
-        for(auto x : noOf1s){
-            cout << x << " ";
-        }
         for(int i = 1; i < noOf1s.size(); i++){
             ans += noOf1s[i]*noOf1s[i-1];
         }
