@@ -3,12 +3,12 @@ public:
     int numSquaresHelper(int n,vector<int>&dp){
         //Base Case
         // int i = 1;
-        if(n==0){
+        if(n<=0){
             return 0;
         }
-        if(n<0){
-            return 0;
-        }
+        // if(n<0){
+        //     return 0;
+        // }
         if(dp[n]!=-1) return dp[n];
        int ans= INT_MAX;
         for(int i = 1; i <= sqrt(n); i++){
