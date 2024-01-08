@@ -15,11 +15,11 @@ public:
 int inorder(TreeNode* root,int low, int high){
     if(!root) return 0;
     int sum = 0;
+    
+    sum+=inorder(root->left, low,  high);
     if(root->val >= low && root->val <= high){
         sum+=root->val;
     }
-    sum+=inorder(root->left, low,  high);
-    
     sum+=inorder(root->right, low,  high);
     return sum;
     
