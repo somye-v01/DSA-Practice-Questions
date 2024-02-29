@@ -59,10 +59,10 @@ public:
             if(temp.size()==sz){
                 
                 reverse(temp.begin(),temp.end());
-                for(auto x : temp){
-                    cout << x << " ";
-                }
-                cout << "->" << ind << endl;
+                // for(auto x : temp){
+                //     cout << x << " ";
+                // }
+                // cout << "->" << ind << endl;
                 if(!checkOddEven(temp,ind)){
                     return false;
                 }
