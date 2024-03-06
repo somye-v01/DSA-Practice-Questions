@@ -13,7 +13,7 @@ public:
         map<ListNode*,bool>m;
         while(head!=nullptr){
             if(m[head]==true){
-                cout << "the duplicate im getting is: "<<head->val<<endl;
+                // cout << "the duplicate im getting is: "<<head->val<<endl;
                 return true;
             }
             m[head]=true;
