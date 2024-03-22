@@ -46,7 +46,7 @@ public:
             int num1 = l1->val;
             int num2 = l2->val;
             int sum = num1+num2+carry;
-            cout<<"val of num1 is: "<<num1<<" & num2 val is: "<<num2<<" and carry: "<<carry<<endl;
+            // cout<<"val of num1 is: "<<num1<<" & num2 val is: "<<num2<<" and carry: "<<carry<<endl;
             carry = sum/10;
             ListNode* tempst = new ListNode(sum%10);
             ans->next = tempst;
