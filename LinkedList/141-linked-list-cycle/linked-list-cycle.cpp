@@ -9,15 +9,13 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        int i = 0;
-        map<ListNode*,bool>m;
-        while(head!=nullptr){
-            if(m[head]==true){
-                // cout << "the duplicate im getting is: "<<head->val<<endl;
-                return true;
-            }
-            m[head]=true;
-            head=head->next;
+        if(!head) return false;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while(fast->next && fast->next->next){
+            slow=slow->next;
+            fast=fast->next->next;
+            if(slow==fast) return true;
         }
         return false;
     }
