@@ -1,4 +1,4 @@
-/* Write your PL/SQL query statement below */
-SELECT name,population,area FROM World
-WHERE (population >= 25000000 OR area >= 3000000);
-ORDER BY name desc
+# Write your MySQL query statement below
+SELECT name, population, area from World
+WHERE
+area>=3000000 OR population>=25000000;
