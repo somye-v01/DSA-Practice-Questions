@@ -1,47 +1,47 @@
 class MyQueue {
-    stack<int> inp;
-    stack<int> out;
+    stack<int>inp;
+    stack<int>out;
 public:
+
     MyQueue() {
-      
+        
     }
     
     void push(int x) {
         inp.push(x);
+        return;
     }
     
     int pop() {
         if(!out.empty()){
-            int x = out.top();
+            int topi = out.top();
             out.pop();
-            return x;
-        } 
+            return topi;
+        }
         else{
+            int topi = -1;
             while(!inp.empty()){
+                topi = inp.top();
                 out.push(inp.top());
                 inp.pop();
             }
-            int x = out.top();
             out.pop();
-            return x;
+            return topi;
         }
-
     }
     
-    
     int peek() {
+        //top element nikalo
         if(!out.empty()){
-            int x = out.top();
-            return x;
+            int topi = out.top();
+            return topi;
         }
-        int n = inp.size();
         while(!inp.empty()){
             out.push(inp.top());
             inp.pop();
         }
         return out.top();
     }
-    
     
     bool empty() {
         return inp.empty() && out.empty();
