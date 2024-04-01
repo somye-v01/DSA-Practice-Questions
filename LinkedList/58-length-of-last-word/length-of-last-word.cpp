@@ -1,17 +1,20 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        reverse(s.begin(),s.end());
-        int cnt=0;
+        int n = s.size()-1;
         bool fl = false;
-        for(int i = 0; i < s.size(); i++){
-            if(isalpha(s[i])){
+        bool con = false;
+        int cnt = 0;
+        while(n>=0 && !fl){
+            if(isalpha(s[n])){
                 cnt++;
-                fl = true;
+                con = true;
             }
-            else if(fl==true){
-                break;
+            
+            if(con && s[n]==' '){
+            fl = true;
             }
+            n--;
         }
         return cnt;
     }
