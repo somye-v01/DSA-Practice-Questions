@@ -7,7 +7,7 @@ public:
             return false;
         }
         char ch = board[i][j];
-        board[i][j] = '#';
+        board[i][j] = '.';
         bool b1 = solve(i+1,j,n,m,k+1,board,word);
         bool b2 = solve(i,j+1,n,m,k+1,board,word);
         bool b3 = solve(i-1,j,n,m,k+1,board,word);
