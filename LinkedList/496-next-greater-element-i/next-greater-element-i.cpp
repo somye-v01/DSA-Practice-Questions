@@ -15,10 +15,10 @@ public:
             }
             st.push(nums2[i]);
         }
-        vector<int>ans(nums1.size(),-1);
+        // vector<int>ans(nums1.size(),-1);
         for(int i = 0; i < nums1.size(); i++){
-            ans[i] = m[nums1[i]];
+            nums1[i] = m[nums1[i]];
         }
-        return ans;
+        return nums1;
     }
 };
