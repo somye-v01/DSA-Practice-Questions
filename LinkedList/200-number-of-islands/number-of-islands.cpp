@@ -1,36 +1,28 @@
 class Solution {
 public:
 
-    void bfs(vector<vector<char>>& grid, map<pair<int,int>,bool>&vis, int row,int col){
-        queue<pair<int,int>> q;
-        q.push({row,col});
-        vis[{row,col}] = true;
-        while(!q.empty()){
-            auto cord = q.front();
-            q.pop();
-            int x = cord.first;
-            int y = cord.second;
-            int dx[] = {-1,1,0,0};
-            int dy[] = {0,0,1,-1};
-            for(int i = 0; i < 4; i++){
-                int newX = x + dx[i];
-                int newY = y + dy[i];
-                if( newX >= 0 && newX < grid.size() && newY >= 0 && newY < grid[0].size() && !vis[{newX,newY}] && grid[newX][newY]=='1'){
-                    q.push({newX,newY });
-                    vis[{newX, newY}] = true;
-                }
-            }
+    void dfs(vector<vector<char>>& grid, int i, int j){
+        grid[i][j] = '0';
+        if(i+1 < grid.size() && grid[i+1][j]=='1'){
+            dfs(grid,i+1,j);
+        }
+        if(j+1 < grid[0].size() && grid[i][j+1]=='1'){
+            dfs(grid,i,j+1);
+        }
+        if(i-1 >= 0 && grid[i-1][j]=='1'){
+            dfs(grid,i-1,j);
+        }
+        if(j-1 >= 0 && grid[i][j-1]=='1'){
+            dfs(grid,i,j-1);
         }
     }
 
     int numIslands(vector<vector<char>>& grid) {
-        map<pair<int,int>,bool>vis;
-        int n = grid[0].size();
         int cnt = 0;
         for(int i = 0; i < grid.size(); i++){
-            for(int j = 0; j < n; j++){
-                if(!vis[{i,j}] && grid[i][j]=='1'){
-                    bfs(grid,vis,i,j);
+            for(int j = 0; j < grid[0].size(); j++){
+                if(grid[i][j] == '1'){
+                    dfs(grid,i,j);
                     cnt++;
                 }
             }
