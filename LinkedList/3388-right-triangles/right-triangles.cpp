@@ -18,7 +18,7 @@ public:
         }
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m ; j++){
-                if(grid[i][j]==1 && rowsum[i]-1>0 && colsum[j]-1>0){
+                if(grid[i][j]==1){
                     ans+=(rowsum[i]-1)*(colsum[j]-1);
                 }
             }
