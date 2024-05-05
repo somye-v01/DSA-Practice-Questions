@@ -2,8 +2,8 @@ class Solution {
 public:
 
     bool valid(string s, int i){
-        cout << i << endl;
-        cout<<endl;
+        // cout << i << endl;
+        // cout<<endl;
         unordered_map<char,int>m;
         string temp = s.substr(0,i);
         for(auto x : temp){
