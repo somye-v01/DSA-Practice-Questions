@@ -40,7 +40,7 @@ public:
         }
         while(carry>0){
             int tempo = carry%10;
-            cout << "carry here: "<<tempo<<endl;
+            // cout << "carry here: "<<tempo<<endl;
             ListNode* l = new ListNode(tempo) ;
             prev->next = l;
             // temp = temp->next;
